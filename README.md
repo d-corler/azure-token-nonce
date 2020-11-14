@@ -16,6 +16,36 @@ With Yarn :
 yarn azure-token-nonce
 ```
 
+## Usage
+
+### Configuration
+
+```ts
+import { AzureTokenNonce } from 'azure-token-nonce';
+
+AzureTokenNonce.configure({
+    tenantId: 'xxx',
+    clientId: 'xxx',
+    kid: 'xxx',
+});
+```
+
+| Property       | Type                         | Required | Description                                                         |
+| -------------- | ---------------------------- | -------- | ------------------------------------------------------------------- |
+| `tenantId`     | `string`                     | `true`   | Unique identifier of your tenant                                    |
+| `clientId`     | `string`                     | `true`   | Unique identifier of your client                                    |
+| `kid`          | `string`                     | `true`   | Unique identifier of signing key (decode your token to retrieve it) |
+| `issuer`       | `string`                     | `false`  | Overwrite issuer (default : https://sts.windows.net/<TENANT_ID>/)   |
+| `jsonwebtoken` | `jsonwebtoken.VerifyOptions` | `false`  | Additional properties for "jsonwebtoken" library                    |
+| `jwksClient`   | `jwksClient.ClientOptions`   | `false`  | Overwrite configuration of jwks client                              |
+
+### Verify
+
+```ts
+// Express request as argument
+await AzureTokenNonce.verifyToken(req);
+```
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!

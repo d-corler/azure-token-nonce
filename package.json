@@ -1,0 +1,48 @@
+{
+  "name": "azure-token-nonce",
+  "version": "0.1.1",
+  "description": "Verify token provided by AzureAD with V2 endpoint (compatible with nonce property)",
+  "keywords": [
+    "verify",
+    "azure",
+    "token",
+    "nonce"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-corler/azure-token-nonce.git"
+  },
+  "homepage": "https://github.com/d-corler/azure-token-nonce#readme",
+  "bugs": {
+    "url": "https://github.com/d-corler/azure-token-nonce/issues"
+  },
+  "author": {
+    "name": "Damien CORLER",
+    "url": "https://github.com/d-corler"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "run-s clean build:src",
+    "build:src": "tsc",
+    "clean": "rimraf lib/"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/jsonwebtoken": "^8.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^1.11.0",
+    "sha2": "^1.0.2"
+  }
+}
